@@ -8,5 +8,4 @@ import { Hero } from '../hero/hero';
 
 export class HeroDetailComponent {
 	 @Input() hero: Hero;
-	 console.log(Hero)
 }
