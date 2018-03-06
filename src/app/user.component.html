@@ -1,0 +1,38 @@
+<h4>大家好，我是{{name}}</h4>
+<p>我来自<strong>{{address.province}}</strong>省,
+  <strong>{{address.city}}</strong>市
+</p>
+<button (click)="toggleSkills()">
+    {{ showSkills ? "隐藏技能" : "显示技能" }}
+</button>
+<div *ngIf="showSkills">
+	<h5>我的技能</h5>
+	<form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm.value)">
+		<div ngModelGroup="user">
+			<input type="text" name="username" required minlength="3" [(ngModel)]="username" #userName="ngModel">
+			<br>
+			<!-- <p>name控件的 valid 状态：{{userName.valid}} -表示控件有效</p>
+			<p>name控件的 invalid 状态：{{userName.invalid}} -表示控件无效</p>
+			<p>name控件的 pristine 状态：{{userName.pristine}} -表示控件值未改变</p>
+			<p>name控件的 dirty 状态：{{userName.dirty}} -表示控件值已改变</p>
+			<p>name控件的 touched 状态：{{userName.touched}} -表示控件值已被访问过</p>
+			<p>name控件的 untouched 状态：{{userName.touched}} -表示控件值未被访问过</p> -->
+			<div *ngIf="userName.errors?.required">请输入用户名</div>
+			<div *ngIf="userName.errors?.minlength">
+				用户名的长度必须大于 {{userName.errors?.minlength.requiredLength}}, 当前的长度为
+				{{userName.errors?.minlength.actualLength}}
+			</div>
+			<input type="password" ngModel name="password">
+		</div>
+		<!-- <div *ngFor="let version of versions;">
+			<input [attr.id]="version" ngModel required [value]="version" type="radio" name="version">
+			<label [attr.for]="version">{{version}}</label>
+		</div> -->
+		<select name="version" [ngModel]="versions[0]" required>
+			<option *ngFor="let version of versions;" [value]="version">{{version}}</option>
+		</select>
+		<button type="submit">提交</button>
+		<hr>
+   		{{loginForm.value | json}}
+	</form>
+</div>
