@@ -6,20 +6,17 @@ import { HttpModule } from '@angular/http'; //引入 Http 模块
 import { RouterModule } from '@angular/router'
 
 import { AppComponent } from './app.component';
-import { UserComponent } from './user.component';
 import { MembersComponent } from './members.component';
 import { MemberService} from './member.service';
 
 export const ROUTES: Routes = [
-  	{ path: '', pathMatch: 'full', redirectTo: 'user' },
-  	{ path: 'user', component: UserComponent },
+  	{ path: '', pathMatch: 'full', redirectTo: 'members' },
   	{ path: 'members', component: MembersComponent }
 ];
 
 @NgModule ({
   declarations: [
     AppComponent,
-    UserComponent,
     MembersComponent
   ],
   imports: [
