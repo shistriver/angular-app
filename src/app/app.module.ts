@@ -9,6 +9,8 @@ import { AppComponent } from './app.component';
 import { MembersComponent } from './members.component';
 import { MemberService} from './member.service';
 
+import { HeroDetailComponent } from './heroDetail/hero-detail.component';
+
 export const ROUTES: Routes = [
   	{ path: '', pathMatch: 'full', redirectTo: 'members' },
   	{ path: 'members', component: MembersComponent }
@@ -17,7 +19,8 @@ export const ROUTES: Routes = [
 @NgModule ({
   declarations: [
     AppComponent,
-    MembersComponent
+    MembersComponent,
+    HeroDetailComponent
   ],
   imports: [
     BrowserModule,
