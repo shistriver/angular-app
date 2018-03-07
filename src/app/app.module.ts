@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { FormsModule }   from '@angular/forms'; // <-- NgModel lives here
 import { HttpModule } from '@angular/http'; //引入 Http 模块
-import { RouterModule } from '@angular/router'
+import { RouterModule, Routes } from '@angular/router'
 
 import { AppComponent } from './app.component';
 import { MembersComponent } from './members.component';
