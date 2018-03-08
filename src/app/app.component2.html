@@ -1,18 +1,10 @@
 <div class="app">
-    <h3>欢迎来到Angular的世界</h3>
+    <h2>{{ title }}</h2>
     <nav>
+        <a routerLink="/heroes">heroes</a>
         <a routerLink="/members">Angular成员</a>
+        <a routerLink="/dashboard">dashboard</a>
     </nav>
-    
-    <h2>My Heroes</h2>
-    <ul class="heroes">
-      <li *ngFor="let hero of heroes" 
-      [class.selected]="hero === selectedHero"
-      (click)="onSelect(hero)">
-          <span class="badge">{{hero.id}}</span> {{hero.name}}
-      </li>
-    </ul>
-    <hero-detail [hero]="selectedHero"></hero-detail>
 
     <br>
     <router-outlet></router-outlet>
